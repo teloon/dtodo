@@ -1,0 +1,17 @@
+.container {
+	max-width: 900px;	
+}
+
+.header {
+	border-bottom: 1px solid #e5e5e5;
+	margin-bottom: 30px;
+}
+
+.header img.logo {
+	width: 50px;
+	vertical-align: text-bottom;
+}
+
+.jumbotron {
+	text-align: center;
+}

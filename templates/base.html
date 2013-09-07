@@ -1,0 +1,18 @@
+<html>
+	<head>
+		<title>Daily Todo</title>
+		<link rel="stylesheet" type="text/css" media="screen" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href={{ static_url("css/main.css") }}>
+		<script type="text/javascript" src="//code.jquery.com/jquery.js"></script>
+		<script type="text/javascript" src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+	</head>
+	<body>
+		<div class="container">
+			<div class="header">
+				<h2 class="text-muted"><img class="logo" src={{ static_url("images/logo.png") }}>&nbsp;Daily Todo</h2>
+			</div>
+			{% block body %}<p>Hello World!</p>{% end %}
+		</div>
+	</body>
+
+</html>
