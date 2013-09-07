@@ -2,7 +2,17 @@
 
 {% block body %}
 
-Hello World!
+<div>
+	<ul>
+	{% for todo, is_done in todos %}
+		{% set checked = "" %}
+		{% if is_done == "y" %}
+			{% set checked = "checked" %}
+		{% end %}
+		<li><input type="checkbox" {{ checked }}> {{ todo }} <a href="#">EDIT</a>
+	{% end %}
+	</ul>
+</div>
 
 {% end %}
 
