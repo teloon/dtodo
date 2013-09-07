@@ -2,12 +2,11 @@
 #-*- coding:utf-8 -*-
 
 import os
-import sys
 import tornado.template
 
 from tornado.options import define
 
-ROOT = os.path.dirname(os.path.absname(__file__))
+ROOT = os.path.dirname(os.path.abspath(__file__))
 
 build_path = lambda *a: os.path.join(ROOT, *a)
 
