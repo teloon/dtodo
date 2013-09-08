@@ -32,7 +32,7 @@
 		
          	var $this = $(this);
 			// setting the key based on an attribute available on the same level as 'contentEditable'
-			var key = $this.attr("data-key");
+			var key = $this.attr("id");
 			// add triggers
 			$this.on('focus', function() {
 				var $this = $(this);

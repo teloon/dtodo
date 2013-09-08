@@ -4,7 +4,6 @@
 
 .header {
 	border-bottom: 1px solid #e5e5e5;
-	margin-bottom: 30px;
 }
 
 .header img.logo {
@@ -17,22 +16,45 @@
 }
 
 .todo li {
-	background: transparent url("/static/images/todo.png") 2% center no-repeat;
-	background-size: 20px 20px;
 	color: #206B3F;
 	cursor: pointer;
 }
 
-.todo li.todo-done {
+.todo li .done_div {
+	background: transparent url("/static/images/todo.png") 2% center no-repeat;
+	background-size: 20px 20px;
+	width: 30px;
+	height: 100%;
+	float: left;
+	position: absolute;
+}
+
+.todo li .list-item-wrapper {
+	position: relative;
+}
+
+.todo li .todo-done {
 	background: transparent url("/static/images/done.png") 2% center no-repeat;
 	background-size: 20px 20px;
 	color: #206B3F;
 }
 
-.todo div.todo-text {
-	margin-left: 25px;
+.todo .todo-text {
+	margin-left: 35px;
 }
 
-.todo a.editable-click {
-	border: none;
+#status {
+	height: 20px;
+	width: 160;
+	margin: 3px 0px;
+}
+
+.status-success {
+	color: #468847;
+	background-color: #dff0d8;
+	border-color: #d6e9c6;
+	border-radius: 4px;
+	padding: 2px 0px;
+	text-align: center;
+	font-size: small;
 }
