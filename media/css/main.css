@@ -1,5 +1,5 @@
 .container {
-	max-width: 900px;	
+	max-width: 700px;	
 }
 
 .header {
@@ -14,4 +14,21 @@
 
 .jumbotron {
 	text-align: center;
+}
+
+.todo li {
+	background: transparent url("/static/images/todo.png") 2% center no-repeat;
+	background-size: 20px 20px;
+	color: #206B3F;
+	cursor: pointer;
+}
+
+.todo li.todo-done {
+	background: transparent url("/static/images/done.png") 2% center no-repeat;
+	background-size: 20px 20px;
+	color: #206B3F;
+}
+
+.todo div.todo-text {
+	margin-left: 25px;
 }

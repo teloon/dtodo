@@ -2,14 +2,14 @@
 
 {% block body %}
 
-<div>
-	<ul>
+<div class="col-sm-12 todo">
+	<ul class="list-group">
 	{% for todo, is_done in todos %}
-		{% set checked = "" %}
+		{% set done_class = "list-group-item" %}
 		{% if is_done == "y" %}
-			{% set checked = "checked" %}
+			{% set done_class = "list-group-item todo-done" %}
 		{% end %}
-		<li><input type="checkbox" {{ checked }}> {{ todo }} <a href="#">EDIT</a>
+		<li class="{{ done_class }}"><div class="todo-text" contenteditable="true">{{ todo }} </div>
 	{% end %}
 	</ul>
 </div>

@@ -21,3 +21,4 @@ TEMPLATE_ROOT = build_path(ROOT, 'templates')
 settings = {}
 settings['static_path'] = MEDIA_ROOT
 settings['template_loader'] = tornado.template.Loader(TEMPLATE_ROOT)
+settings['debug'] = True

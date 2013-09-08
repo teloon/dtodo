@@ -34,7 +34,11 @@ class CreateHandler(tornado.web.RequestHandler):
         todos_coll = db["todo_lst"]
         todos_coll.insert({
             "tid": tid,
-            "todos": [("hello world", "n"), ("book room", "y")],
+            "todos": [(u"提供数据库、后端运行环境，让网站跑得飞快、跑得稳，更好地被百度搜索引擎收录.Bootstrap \
+                           includes a responsive, mobile first fluid grid system", "n"),
+                      ("It includes predefined classes for easy layout options, as well as powerful \
+                           mixins for generating more semantic layouts.", "y")
+                      ],
         })
         return tid
 
