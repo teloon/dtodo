@@ -1,5 +1,19 @@
 $(function() {
 
+	function ajax_success (res) {
+		$("#status").addClass("status-success").html("Successfully Update!");
+		window.setTimeout(function(){
+								$("#status").removeClass("status-success").html("");
+							}, 2000);		
+	}
+
+	function ajax_fail (res) {
+		$("#status").addClass("status-fail").html("Update Failed!");
+		window.setTimeout(function(){
+								$("#status").removeClass("status-fail").html("");
+							}, 2000);			
+	}
+
 	function updateTODO (e) {
 		var tid = $("div.todo").attr("tid");
 		console.log(tid);
@@ -21,15 +35,13 @@ $(function() {
 						td_idx: td_idx,
 						new_todo: new_todo,
 				},
-				success: function(result){
-					$("#status").addClass("status-success").html("Successfully Update!");
-					window.setTimeout(function(){
-											$("#status").removeClass("status-success").html("");
-										}, 2000);
+				success: function(res){
+					ajax_success(res);
 					if(new_todo === ""){
 						$("#"+k).parent().parent().remove();
 					}
 				},
+				error: ajax_fail,
 			});
 		};
 	}
@@ -57,6 +69,8 @@ $(function() {
 				new_todo: $('#'+todo_id).html(),
 				checked: checked,
 			},
+			success: ajax_success,
+			error: ajax_fail,
 		});	
 	}
 
