@@ -14,7 +14,7 @@
 			{% end %}
 			<li class="list-group-item">
 				<div class="list-item-wrapper">
-					<div class="done_div {{ done_class }}"></div>
+					<div id="check-{{ td_id }}" class="done_div {{ done_class }}"></div>
 					<div id={{ td_id }} class="todo-text" contenteditable="true">
 						<script type="text/javascript">setTodoHTML("{{ escape_newline(todo) }}", '{{ td_id }}')</script>
 					</div>

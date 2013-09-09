@@ -1,5 +1,6 @@
 $(function() {
-	$(".todo").contentEditable().change(function(e) {
+
+	function updateTODO (e) {
 		var tid = $("div.todo").attr("tid");
 		console.log(tid);
 		for (k in e.changed) {
@@ -31,10 +32,55 @@ $(function() {
 				},
 			});
 		};
-	});
+	}
 
-	$(".done_div").click(function() {
-		alert(123);
+	function updateCheck (obj) {
+		console.log(obj);
+		var id = obj.target.id;
+		tgt = $("#" + id);
+		console.log(tgt);
+		if (tgt.hasClass("todo-done")) {
+			tgt.removeClass("todo-done");
+		} else {
+			tgt.addClass("todo-done");
+		};
+		var tid = $("div.todo").attr("tid");
+		var td_idx = id.match(/\d+/g)[0];
+		var checked = tgt.hasClass("todo-done") ? "y" : "n";
+		var todo_id = id.replace(/check-/g, "", id)
+		$.ajax({
+			type: "POST",
+			url: "/update",
+			data: {
+				tid: tid,
+				td_idx: td_idx,
+				new_todo: $('#'+todo_id).html(),
+				checked: checked,
+			},
+		});	
+	}
+
+	$(".todo").contentEditable().change(updateTODO);
+
+	$(".done_div").click(updateCheck);
+
+	$("#add-todo-div .btn").click(function () {
+		var li_html = '	<li class="list-group-item"> \
+							<div class="list-item-wrapper"> \
+								<div id="p1" class="done_div"></div> \
+								<div id="p2" class="todo-text" contenteditable="true"></div> \
+							</div> \
+						</li>';
+		var newNode = $('<div/>').html(li_html);
+		var last_id = $('.todo-text :last').attr('id');
+		var mat = last_id.match(/\d+/g);
+		var num = parseInt(mat[0], 10);
+		newNode.find('#p2').attr('id', 'todo-id-'+ (num+1));
+		newNode.find('#p1').attr('id', 'check-todo-id-'+ (num+1));
+		$(".todo ul").append(newNode.child);
+		newNode.find('li :first').insertAfter($('.todo .list-group-item :last'))
+		$(".todo li :last").contentEditable().change(updateTODO);
+		$(".done_div :last").click(updateCheck);
 	});
 });
 

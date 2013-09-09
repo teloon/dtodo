@@ -43,6 +43,10 @@
 	margin-left: 35px;
 }
 
+.todo .list-group {
+	margin-bottom: 0px;
+}
+
 #status {
 	height: 20px;
 	width: 160;
@@ -57,4 +61,18 @@
 	padding: 2px 0px;
 	text-align: center;
 	font-size: small;
+}
+
+#add-todo-div {
+	margin: 4px 0px;
+}
+
+#add-todo-div button {
+	padding: 2px 15px;
+	font-size: 10px;
+	line-height: 0.8;
+	border-radius: 3px;
+	color: #fff;
+	background-color: #1abc9c;
+	border-color: #4cae4c;
 }
