@@ -13,6 +13,9 @@
 
 .jumbotron {
 	text-align: center;
+	margin-top: 26px;
+	padding-top: 28px;
+	padding-bottom: 28px;
 }
 
 .todo li {
@@ -75,6 +78,7 @@
 
 #add-todo-div {
 	margin: 4px 0px;
+	width: 15%;
 }
 
 #add-todo-div button {
@@ -85,4 +89,12 @@
 	color: #fff;
 	background-color: #1abc9c;
 	border-color: #4cae4c;
+	overflow: hidden;
+}
+
+#edit-tip {
+	float: right;
+	width: 200px;
+	font-size: smaller;
+	color: #4C946C;
 }
