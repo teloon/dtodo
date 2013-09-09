@@ -110,6 +110,10 @@ $(function() {
 		$(".todo li :last").contentEditable().change(updateTODO);
 		$(".done_div :last").click(updateCheck);
 	});
+
+	$("#logo").click(function () {
+		window.location.href = "/";
+	})
 });
 
 function htmlDecode (input) {

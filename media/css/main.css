@@ -6,9 +6,10 @@
 	border-bottom: 1px solid #e5e5e5;
 }
 
-.header img.logo {
+#logo {
 	width: 50px;
 	vertical-align: text-bottom;
+	cursor: pointer;
 }
 
 .jumbotron {
