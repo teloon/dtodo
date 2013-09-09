@@ -1,13 +1,13 @@
 $(function() {
 
-	function ajax_success (res) {
+	function ajaxSuccess (res) {
 		$("#status").addClass("status-success").html("Successfully Update!");
 		window.setTimeout(function(){
 								$("#status").removeClass("status-success").html("");
 							}, 2000);		
 	}
 
-	function ajax_fail (res) {
+	function ajaxFail (res) {
 		$("#status").addClass("status-fail").html("Update Failed!");
 		window.setTimeout(function(){
 								$("#status").removeClass("status-fail").html("");
@@ -36,12 +36,26 @@ $(function() {
 						new_todo: new_todo,
 				},
 				success: function(res){
-					ajax_success(res);
+					ajaxSuccess(res);
 					if(new_todo === ""){
 						$("#"+k).parent().parent().remove();
+						// update the todo-ids
+						// otherwise it may fail when creating new todo
+						// because of the todo-idx in todo-ids
+			/*Fail, bacause the todo-id-* in $(".todo").contentEditable() don't change
+						$(".todo-text").each(function(index) {
+							$(this).attr("id", "todo-id-" + index);
+						});
+						$(".done_div").each(function(index) {
+							$(this).attr("id", "check-todo-id-" + index);
+						});
+			*/	
+						window.setTimeout(function(){
+												location.reload();
+											}, 500);
 					}
 				},
-				error: ajax_fail,
+				//error: ajaxFail,
 			});
 		};
 	}
@@ -69,8 +83,8 @@ $(function() {
 				new_todo: $('#'+todo_id).html(),
 				checked: checked,
 			},
-			success: ajax_success,
-			error: ajax_fail,
+			success: ajaxSuccess,
+			//error: ajaxFail,
 		});	
 	}
 
