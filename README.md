@@ -17,8 +17,9 @@ You todo-list will be tracked by an unique url, which works like the URL shorten
 
 ## How to run
 
-1. run `mongod` to start the mongo daemon service by 
-2. run `python app.py` to start the tornado server
-3. visit http://localhost:8888
+1. checkout the code and install the prerequisites;
+1. run `mongod` to start the mongo daemon;
+2. run `python app.py` to start the tornado server;
+3. visit http://localhost:8888;
 
 
