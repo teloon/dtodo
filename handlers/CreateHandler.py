@@ -34,9 +34,7 @@ class CreateHandler(tornado.web.RequestHandler):
         todos_coll = db["todo_lst"]
         todos_coll.insert({
             "tid": tid,
-            "todos": [["feed the dog", "n"],
-                      ["see the doctor", "y"],
-                      ["gym workout", "n"],
+            "todos": [["", "n"],
                       ],
         })
         return tid
