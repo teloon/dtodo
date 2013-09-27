@@ -30,6 +30,6 @@ You todo-list will be tracked by an unique url, which works like the URL shorten
 #TODO
 
 1. randomize the url id
-
-
-
+1. fix demo problem
+1. add logging module
+1. fix bug: not delete the last todo
